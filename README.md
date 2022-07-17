@@ -35,6 +35,7 @@ run `uvicorn main:app --reload`
 }
 `
 ### Getting products by category
+`
 {
   productsByCategory(id: 1) {
     name,
@@ -42,3 +43,4 @@ run `uvicorn main:app --reload`
     category
   }
 }
+`
