@@ -15,7 +15,6 @@ class Query(ObjectType):
     async def resolve_product_details(self, info, id=None):
         with open("./products.json") as products:
             product_list = json.load(products)
-        print(product_list)
         if (id):
             for product in product_list:
                 if product['id'] == id: return product
@@ -43,6 +42,7 @@ class Query(ObjectType):
 app = FastAPI()
 app.add_route("/graphql", GraphQLApp(
     schema=Schema(query=Query),
-    on_get=make_graphiql_handler()
+    on_get=make_graphiql_handler(),
+    
 ))
 
